@@ -1,0 +1,7 @@
+name: runtime-environment
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - scipy
+  - shapely
