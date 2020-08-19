@@ -147,7 +147,8 @@ def optimum_distance_angle(num_leg,
                    constraints=[dist_constraint],
                    bounds=bounds_constraint,
                    options={"verbose":1})
-    print(res.x)
+    print(f"Leg distances: {res.x[0:num_leg]}, turn angles: {res.x[num_leg:(2*num_leg-1)]}")
+    print(f"Initial offset: {res.x[-2]:.1f}, {res.x[-1]:.1f}")
     sampled_area_fraction(res.x[0:num_leg], res.x[num_leg:(2*num_leg-1)], res.x[-2], res.x[-1],
                           radius_of_turn, satellite_footprint_radius, sensor_footprint_radius, true_airspeed,
                           True)
